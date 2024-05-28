@@ -43,13 +43,13 @@ def video_capture():
 
     #Main loop.
     while True:
-        #Start video capture, flip the camera, and show fps.
+        #Start video capture, flip the camera, and show fps (Optional).
         check, img = video.read()
         img = cv2.flip(img, 1)
         current_time = time.time()
         fps = 1 / (current_time - prev_time)
         prev_time = current_time
-        cv2.putText(img, f"FPS: {int(fps)}", (100, 300), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+        #cv2.putText(img, f"FPS: {int(fps)}", (100, 300), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         #If there is an issue with the camera.
         if not check:
             print("Failed to capture the camera")
